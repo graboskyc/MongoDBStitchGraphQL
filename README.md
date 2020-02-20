@@ -1,5 +1,9 @@
 # MongoDBStitchGraphQL
 
+_A hands on workshop run by MongoDB for the Philadelphia area on Feb 26, 2020._
+
+Here we will use MongoDB Atlas, MongoDB Stitch, and Stitch's new GraphQL interface. This will serve as a simple tutorial and introduction to  GraphQL and Stitch.
+
 ## Initial Setup Guide
 
 * Deploy a MongoDB Atlas cluster
