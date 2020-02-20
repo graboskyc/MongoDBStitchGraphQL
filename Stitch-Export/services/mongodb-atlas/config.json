@@ -1,0 +1,11 @@
+{
+    "id": "5e4ea20e86371298945f28eb",
+    "name": "mongodb-atlas",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "BrewingUpInnovation",
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}

@@ -1,0 +1,38 @@
+{
+    "id": "5e4ea47cb0df2312812401d8",
+    "database": "sample_mflix",
+    "collection": "opinions",
+    "roles": [
+        {
+            "name": "owner",
+            "apply_when": {
+                "owner": "%%user.id"
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "title": "opinions",
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "owner": {
+                "bsonType": "string"
+            },
+            "opinion": {
+                "bsonType": "string"
+            },
+            "rated": {
+                "bsonType": "double"
+            },
+            "title": {
+                "bsonType": "string"
+            }
+        }
+    }
+}
