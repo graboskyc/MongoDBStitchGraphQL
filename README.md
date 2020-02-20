@@ -139,3 +139,32 @@ query {
   }
 }
 ```
+
+## Testing Outside of Stitch
+### Get your access token via REST:
+* Open a new tab in your browser to [APITester.com](https://apitester.com/)
+* Change the request type to `POST`
+* In the `URL` field enter `https://stitch.mongodb.com/api/client/v2.0/app/<YOURAPPID>/auth/providers/local-userpass/login` and replace `<YOURAPPID>` with the value in the top left corner of the Stitch console
+* In post data, set the body to the following, entering the email and password you created earlier in Stitch:
+```
+{
+    "username": "YOUREMAILADDRESSHERE",
+    "password": "YOURPASSWORDHERE"
+  }
+```
+* Press the __Add Request Header__ button and set the __Name__ to `Content-Type` and the __Value__ to `application/json`
+* Press the __Test__ button and you should get your `access_token` in the __Response Body__ section
+
+![](img/ss09.png)
+
+### Make your GraphQL Queries
+* Open a new tab in your browser to [altair-gql.sirmuel.design/](https://altair-gql.sirmuel.design/)
+* In the `POST` field, copy and paste the __GraphQL Endpoint__ URL from the __GraphQL__ page within the Stitch console
+* Press the star-looking button directly to the left to __Set Headers__
+* Click the __Add header__ button
+* Set the `Header key` to `Authorization` 
+* Set the `Header value` to `Bearer ` followed by the long string from the `access_token` you got in the last step such that it looks something like `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODIyMjcxMDgsImlhdCI6MWNjZXNzIn0.x-jik_SjKn5zXamRwN5kxxnfBOGilaVrMfIjA0W7MZQ`
+* In the left column enter the 2 `movie` `query` from the previous section and the 1 `query` for the `opinions`. Once you type a valid query, a __(Run query)__ button appears so press it. You should see the results on the right column
+* Feel free to add another `mutation` here for another of your favorite movies as shown in the `mutation` section above
+
+![](img/ss10.png)
