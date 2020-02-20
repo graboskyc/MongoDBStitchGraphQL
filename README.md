@@ -121,6 +121,10 @@ mutation {
 }
 ```
 
+* After this is complete, on the top left of the Stitch screen there is a button to return togo __Back to Atlas__. Press that or open cloud.mongodb.com in a new tab.
+* Click the __Collections__  button on your cluster, then go to the `sample_mflix` database.
+* You should now see a new collection called `opinions` with your opinions in there!
+
 ## GraphQL Sample Queries
 ### OPINIONS: Your opinions
 _Replace the GUID with your ID you copied earlier_
@@ -128,8 +132,8 @@ _Replace the GUID with your ID you copied earlier_
 query {
   opinions(query:{owner:"5e4ea9daa329830aaaee66ef"}) {
     _id
-		title
-		rated
+    title
+    rated
     owner
     opinion
   }
